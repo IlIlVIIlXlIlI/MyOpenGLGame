@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2007 Erwin Coumans  http://bulletphysics.com
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,28 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef BT_SPU_COLLISION_OBJECT_WRAPPER_H
+#define BT_SPU_COLLISION_OBJECT_WRAPPER_H
 
+#include "PlatformDefinitions.h"
+#include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 
-	
-int main(int argc,char** argv)
+ATTRIBUTE_ALIGNED16(class) SpuCollisionObjectWrapper
 {
+protected:
+	int m_shapeType;
+	float m_margin;
+	ppu_address_t m_collisionObjectPtr;
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
+public:
+	SpuCollisionObjectWrapper ();
+
+	SpuCollisionObjectWrapper (const btCollisionObject* collisionObject);
+
+	int           getShapeType () const;
+	float         getCollisionMargin () const;
+	ppu_address_t getCollisionObjectPtr () const;
+};
 
 
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
-	
-	//default glut doesn't return from mainloop
-	return 0;
-}
-
+#endif //BT_SPU_COLLISION_OBJECT_WRAPPER_H

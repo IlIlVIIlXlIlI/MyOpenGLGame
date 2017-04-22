@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -12,28 +12,30 @@ subject to the following restrictions:
 2. Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 3. This notice may not be removed or altered from any source distribution.
 */
+#ifndef GL_SIMPLEX_1TO4_H
+#define GL_SIMPLEX_1TO4_H
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#include "BulletCollision/CollisionShapes/btTetrahedronShape.h"
 
+#include "BulletCollision/NarrowPhaseCollision/btSimplexSolverInterface.h"
 
-	
-int main(int argc,char** argv)
+///GL_Simplex1to4 is a class to debug a Simplex Solver with 1 to 4 points. 
+///Can be used by GJK.
+class GL_Simplex1to4 : public btBU_Simplex1to4
 {
+	btSimplexSolverInterface*	m_simplexSolver;
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
+	public:
 
+	GL_Simplex1to4();
+	virtual ~GL_Simplex1to4();
 
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
-	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+	void	calcClosest(btScalar* m);
 
+	void	setSimplexSolver(btSimplexSolverInterface* simplexSolver) {
+		m_simplexSolver = simplexSolver;
+	}
+
+};
+
+#endif //GL_SIMPLEX_1TO4_H

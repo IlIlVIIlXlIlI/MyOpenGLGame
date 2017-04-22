@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,34 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef _BT_ACTION_INTERFACE_H
+#define _BT_ACTION_INTERFACE_H
 
+class btIDebugDraw;
+class btCollisionWorld;
 
-	
-int main(int argc,char** argv)
+#include "LinearMath/btScalar.h"
+#include "btRigidBody.h"
+
+///Basic interface to allow actions such as vehicles and characters to be updated inside a btDynamicsWorld
+class btActionInterface
 {
+protected:
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
+	static btRigidBody& getFixedBody();
 	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+	
+public:
+
+	virtual ~btActionInterface()
+	{
+	}
+
+	virtual void updateAction( btCollisionWorld* collisionWorld, btScalar deltaTimeStep)=0;
+
+	virtual void debugDraw(btIDebugDraw* debugDrawer) = 0;
+
+};
+
+#endif //_BT_ACTION_INTERFACE_H
 

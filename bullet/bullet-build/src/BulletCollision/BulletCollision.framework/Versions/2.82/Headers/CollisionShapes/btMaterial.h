@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2009 Erwin Coumans  http://bulletphysics.org
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,23 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+/// This file was created by Alex Silverman
 
+#ifndef BT_MATERIAL_H
+#define BT_MATERIAL_H
 
-	
-int main(int argc,char** argv)
+// Material class to be used by btMultimaterialTriangleMeshShape to store triangle properties
+class btMaterial
 {
+    // public members so that materials can change due to world events
+public:
+    btScalar m_friction;
+    btScalar m_restitution;
+    int pad[2];
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
+    btMaterial(){}
+    btMaterial(btScalar fric, btScalar rest) { m_friction = fric; m_restitution = rest; }
+};
 
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
-	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+#endif // BT_MATERIAL_H
 

@@ -7,7 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		74CE57991EA8B2E8003099C1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74CE57981EA8B2E8003099C1 /* main.cpp */; };
+		742C045E1EAAF35C0053B6C3 /* BasicDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C045A1EAAF35C0053B6C3 /* BasicDemo.cpp */; };
+		742C045F1EAAF35C0053B6C3 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C045C1EAAF35C0053B6C3 /* main.cpp */; };
+		742C04601EAAF35C0053B6C3 /* Win32BasicDemo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C045D1EAAF35C0053B6C3 /* Win32BasicDemo.cpp */; };
+		742C04AA1EAAF54E0053B6C3 /* DemoApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C048F1EAAF54E0053B6C3 /* DemoApplication.cpp */; };
+		742C04AB1EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04911EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.cpp */; };
+		742C04AC1EAAF54E0053B6C3 /* GL_DialogWindow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04931EAAF54E0053B6C3 /* GL_DialogWindow.cpp */; };
+		742C04AD1EAAF54E0053B6C3 /* GL_ShapeDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04951EAAF54E0053B6C3 /* GL_ShapeDrawer.cpp */; };
+		742C04AE1EAAF54E0053B6C3 /* GL_Simplex1to4.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04971EAAF54E0053B6C3 /* GL_Simplex1to4.cpp */; };
+		742C04AF1EAAF54E0053B6C3 /* GLDebugDrawer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04991EAAF54E0053B6C3 /* GLDebugDrawer.cpp */; };
+		742C04B01EAAF54E0053B6C3 /* GLDebugFont.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C049B1EAAF54E0053B6C3 /* GLDebugFont.cpp */; };
+		742C04B11EAAF54E0053B6C3 /* GlutDemoApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C049D1EAAF54E0053B6C3 /* GlutDemoApplication.cpp */; };
+		742C04B21EAAF54E0053B6C3 /* GlutStuff.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C049F1EAAF54E0053B6C3 /* GlutStuff.cpp */; };
+		742C04B31EAAF54E0053B6C3 /* RenderTexture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04A31EAAF54E0053B6C3 /* RenderTexture.cpp */; };
+		742C04B41EAAF54E0053B6C3 /* stb_image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04A51EAAF54E0053B6C3 /* stb_image.cpp */; };
+		742C04B51EAAF54E0053B6C3 /* Win32AppMain.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04A71EAAF54E0053B6C3 /* Win32AppMain.cpp */; };
+		742C04B61EAAF54E0053B6C3 /* Win32DemoApplication.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 742C04A81EAAF54E0053B6C3 /* Win32DemoApplication.cpp */; };
+		74CE57A21EA8B2F8003099C1 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57A01EA8B2F8003099C1 /* GLUT.framework */; };
+		74CE57A31EA8B2F8003099C1 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57A11EA8B2F8003099C1 /* OpenGL.framework */; };
+		74CE57A51EA8B349003099C1 /* BulletDynamics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57A41EA8B349003099C1 /* BulletDynamics.framework */; };
+		74CE57A71EA8B357003099C1 /* BulletCollision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57A61EA8B357003099C1 /* BulletCollision.framework */; };
+		74CE57A91EA8B36A003099C1 /* BulletSoftBody.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57A81EA8B36A003099C1 /* BulletSoftBody.framework */; };
+		74CE57AB1EA8B370003099C1 /* BulletMultiThreaded.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57AA1EA8B370003099C1 /* BulletMultiThreaded.framework */; };
+		74CE57AD1EA8B377003099C1 /* MiniCL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57AC1EA8B377003099C1 /* MiniCL.framework */; };
+		74CE57AF1EA8B37C003099C1 /* LinearMath.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE57AE1EA8B37C003099C1 /* LinearMath.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +46,49 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		742C045A1EAAF35C0053B6C3 /* BasicDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BasicDemo.cpp; sourceTree = "<group>"; };
+		742C045B1EAAF35C0053B6C3 /* BasicDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicDemo.h; sourceTree = "<group>"; };
+		742C045C1EAAF35C0053B6C3 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		742C045D1EAAF35C0053B6C3 /* Win32BasicDemo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Win32BasicDemo.cpp; sourceTree = "<group>"; };
+		742C048C1EAAF54E0053B6C3 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		742C048D1EAAF54E0053B6C3 /* CommandLineArguments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommandLineArguments.h; sourceTree = SOURCE_ROOT; };
+		742C048E1EAAF54E0053B6C3 /* DebugCastResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugCastResult.h; sourceTree = SOURCE_ROOT; };
+		742C048F1EAAF54E0053B6C3 /* DemoApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DemoApplication.cpp; sourceTree = SOURCE_ROOT; };
+		742C04901EAAF54E0053B6C3 /* DemoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoApplication.h; sourceTree = SOURCE_ROOT; };
+		742C04911EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GL_DialogDynamicsWorld.cpp; sourceTree = SOURCE_ROOT; };
+		742C04921EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GL_DialogDynamicsWorld.h; sourceTree = SOURCE_ROOT; };
+		742C04931EAAF54E0053B6C3 /* GL_DialogWindow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GL_DialogWindow.cpp; sourceTree = SOURCE_ROOT; };
+		742C04941EAAF54E0053B6C3 /* GL_DialogWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GL_DialogWindow.h; sourceTree = SOURCE_ROOT; };
+		742C04951EAAF54E0053B6C3 /* GL_ShapeDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GL_ShapeDrawer.cpp; sourceTree = SOURCE_ROOT; };
+		742C04961EAAF54E0053B6C3 /* GL_ShapeDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GL_ShapeDrawer.h; sourceTree = SOURCE_ROOT; };
+		742C04971EAAF54E0053B6C3 /* GL_Simplex1to4.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GL_Simplex1to4.cpp; sourceTree = SOURCE_ROOT; };
+		742C04981EAAF54E0053B6C3 /* GL_Simplex1to4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GL_Simplex1to4.h; sourceTree = SOURCE_ROOT; };
+		742C04991EAAF54E0053B6C3 /* GLDebugDrawer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDebugDrawer.cpp; sourceTree = SOURCE_ROOT; };
+		742C049A1EAAF54E0053B6C3 /* GLDebugDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDebugDrawer.h; sourceTree = SOURCE_ROOT; };
+		742C049B1EAAF54E0053B6C3 /* GLDebugFont.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GLDebugFont.cpp; sourceTree = SOURCE_ROOT; };
+		742C049C1EAAF54E0053B6C3 /* GLDebugFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLDebugFont.h; sourceTree = SOURCE_ROOT; };
+		742C049D1EAAF54E0053B6C3 /* GlutDemoApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlutDemoApplication.cpp; sourceTree = SOURCE_ROOT; };
+		742C049E1EAAF54E0053B6C3 /* GlutDemoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlutDemoApplication.h; sourceTree = SOURCE_ROOT; };
+		742C049F1EAAF54E0053B6C3 /* GlutStuff.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GlutStuff.cpp; sourceTree = SOURCE_ROOT; };
+		742C04A01EAAF54E0053B6C3 /* GlutStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlutStuff.h; sourceTree = SOURCE_ROOT; };
+		742C04A11EAAF54E0053B6C3 /* Makefile.am */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Makefile.am; sourceTree = SOURCE_ROOT; };
+		742C04A21EAAF54E0053B6C3 /* premake4.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = premake4.lua; sourceTree = SOURCE_ROOT; };
+		742C04A31EAAF54E0053B6C3 /* RenderTexture.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RenderTexture.cpp; sourceTree = SOURCE_ROOT; };
+		742C04A41EAAF54E0053B6C3 /* RenderTexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RenderTexture.h; sourceTree = SOURCE_ROOT; };
+		742C04A51EAAF54E0053B6C3 /* stb_image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stb_image.cpp; sourceTree = SOURCE_ROOT; };
+		742C04A61EAAF54E0053B6C3 /* stb_image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = SOURCE_ROOT; };
+		742C04A71EAAF54E0053B6C3 /* Win32AppMain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Win32AppMain.cpp; sourceTree = SOURCE_ROOT; };
+		742C04A81EAAF54E0053B6C3 /* Win32DemoApplication.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Win32DemoApplication.cpp; sourceTree = SOURCE_ROOT; };
+		742C04A91EAAF54E0053B6C3 /* Win32DemoApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Win32DemoApplication.h; sourceTree = SOURCE_ROOT; };
 		74CE57951EA8B2E8003099C1 /* ABC */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ABC; sourceTree = BUILT_PRODUCTS_DIR; };
-		74CE57981EA8B2E8003099C1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		74CE57A01EA8B2F8003099C1 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		74CE57A11EA8B2F8003099C1 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		74CE57A41EA8B349003099C1 /* BulletDynamics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletDynamics.framework; path = "bullet/bullet-build/src/BulletDynamics/BulletDynamics.framework"; sourceTree = "<group>"; };
+		74CE57A61EA8B357003099C1 /* BulletCollision.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletCollision.framework; path = "bullet/bullet-build/src/BulletCollision/BulletCollision.framework"; sourceTree = "<group>"; };
+		74CE57A81EA8B36A003099C1 /* BulletSoftBody.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletSoftBody.framework; path = "bullet/bullet-build/src/BulletSoftBody/BulletSoftBody.framework"; sourceTree = "<group>"; };
+		74CE57AA1EA8B370003099C1 /* BulletMultiThreaded.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BulletMultiThreaded.framework; path = "bullet/bullet-build/src/BulletMultiThreaded/BulletMultiThreaded.framework"; sourceTree = "<group>"; };
+		74CE57AC1EA8B377003099C1 /* MiniCL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MiniCL.framework; path = "bullet/bullet-build/src/MiniCL/MiniCL.framework"; sourceTree = "<group>"; };
+		74CE57AE1EA8B37C003099C1 /* LinearMath.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LinearMath.framework; path = "bullet/bullet-build/src/LinearMath/LinearMath.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +96,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74CE57A21EA8B2F8003099C1 /* GLUT.framework in Frameworks */,
+				74CE57A31EA8B2F8003099C1 /* OpenGL.framework in Frameworks */,
+				74CE57AB1EA8B370003099C1 /* BulletMultiThreaded.framework in Frameworks */,
+				74CE57AF1EA8B37C003099C1 /* LinearMath.framework in Frameworks */,
+				74CE57AD1EA8B377003099C1 /* MiniCL.framework in Frameworks */,
+				74CE57A91EA8B36A003099C1 /* BulletSoftBody.framework in Frameworks */,
+				74CE57A71EA8B357003099C1 /* BulletCollision.framework in Frameworks */,
+				74CE57A51EA8B349003099C1 /* BulletDynamics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +115,7 @@
 			children = (
 				74CE57971EA8B2E8003099C1 /* ABC */,
 				74CE57961EA8B2E8003099C1 /* Products */,
+				74CE579F1EA8B2F7003099C1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +130,57 @@
 		74CE57971EA8B2E8003099C1 /* ABC */ = {
 			isa = PBXGroup;
 			children = (
-				74CE57981EA8B2E8003099C1 /* main.cpp */,
+				742C045A1EAAF35C0053B6C3 /* BasicDemo.cpp */,
+				742C045B1EAAF35C0053B6C3 /* BasicDemo.h */,
+				742C045C1EAAF35C0053B6C3 /* main.cpp */,
+				742C045D1EAAF35C0053B6C3 /* Win32BasicDemo.cpp */,
+				742C048C1EAAF54E0053B6C3 /* CMakeLists.txt */,
+				742C048D1EAAF54E0053B6C3 /* CommandLineArguments.h */,
+				742C048E1EAAF54E0053B6C3 /* DebugCastResult.h */,
+				742C048F1EAAF54E0053B6C3 /* DemoApplication.cpp */,
+				742C04901EAAF54E0053B6C3 /* DemoApplication.h */,
+				742C04911EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.cpp */,
+				742C04921EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.h */,
+				742C04931EAAF54E0053B6C3 /* GL_DialogWindow.cpp */,
+				742C04941EAAF54E0053B6C3 /* GL_DialogWindow.h */,
+				742C04951EAAF54E0053B6C3 /* GL_ShapeDrawer.cpp */,
+				742C04961EAAF54E0053B6C3 /* GL_ShapeDrawer.h */,
+				742C04971EAAF54E0053B6C3 /* GL_Simplex1to4.cpp */,
+				742C04981EAAF54E0053B6C3 /* GL_Simplex1to4.h */,
+				742C04991EAAF54E0053B6C3 /* GLDebugDrawer.cpp */,
+				742C049A1EAAF54E0053B6C3 /* GLDebugDrawer.h */,
+				742C049B1EAAF54E0053B6C3 /* GLDebugFont.cpp */,
+				742C049C1EAAF54E0053B6C3 /* GLDebugFont.h */,
+				742C049D1EAAF54E0053B6C3 /* GlutDemoApplication.cpp */,
+				742C049E1EAAF54E0053B6C3 /* GlutDemoApplication.h */,
+				742C049F1EAAF54E0053B6C3 /* GlutStuff.cpp */,
+				742C04A01EAAF54E0053B6C3 /* GlutStuff.h */,
+				742C04A11EAAF54E0053B6C3 /* Makefile.am */,
+				742C04A21EAAF54E0053B6C3 /* premake4.lua */,
+				742C04A31EAAF54E0053B6C3 /* RenderTexture.cpp */,
+				742C04A41EAAF54E0053B6C3 /* RenderTexture.h */,
+				742C04A51EAAF54E0053B6C3 /* stb_image.cpp */,
+				742C04A61EAAF54E0053B6C3 /* stb_image.h */,
+				742C04A71EAAF54E0053B6C3 /* Win32AppMain.cpp */,
+				742C04A81EAAF54E0053B6C3 /* Win32DemoApplication.cpp */,
+				742C04A91EAAF54E0053B6C3 /* Win32DemoApplication.h */,
 			);
 			path = ABC;
+			sourceTree = "<group>";
+		};
+		74CE579F1EA8B2F7003099C1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74CE57AE1EA8B37C003099C1 /* LinearMath.framework */,
+				74CE57AC1EA8B377003099C1 /* MiniCL.framework */,
+				74CE57AA1EA8B370003099C1 /* BulletMultiThreaded.framework */,
+				74CE57A81EA8B36A003099C1 /* BulletSoftBody.framework */,
+				74CE57A61EA8B357003099C1 /* BulletCollision.framework */,
+				74CE57A41EA8B349003099C1 /* BulletDynamics.framework */,
+				74CE57A01EA8B2F8003099C1 /* GLUT.framework */,
+				74CE57A11EA8B2F8003099C1 /* OpenGL.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +241,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74CE57991EA8B2E8003099C1 /* main.cpp in Sources */,
+				742C04601EAAF35C0053B6C3 /* Win32BasicDemo.cpp in Sources */,
+				742C04B51EAAF54E0053B6C3 /* Win32AppMain.cpp in Sources */,
+				742C04B11EAAF54E0053B6C3 /* GlutDemoApplication.cpp in Sources */,
+				742C04B31EAAF54E0053B6C3 /* RenderTexture.cpp in Sources */,
+				742C04AA1EAAF54E0053B6C3 /* DemoApplication.cpp in Sources */,
+				742C04B61EAAF54E0053B6C3 /* Win32DemoApplication.cpp in Sources */,
+				742C04AC1EAAF54E0053B6C3 /* GL_DialogWindow.cpp in Sources */,
+				742C04B01EAAF54E0053B6C3 /* GLDebugFont.cpp in Sources */,
+				742C04AD1EAAF54E0053B6C3 /* GL_ShapeDrawer.cpp in Sources */,
+				742C045E1EAAF35C0053B6C3 /* BasicDemo.cpp in Sources */,
+				742C04AB1EAAF54E0053B6C3 /* GL_DialogDynamicsWorld.cpp in Sources */,
+				742C04B41EAAF54E0053B6C3 /* stb_image.cpp in Sources */,
+				742C045F1EAAF35C0053B6C3 /* main.cpp in Sources */,
+				742C04AE1EAAF54E0053B6C3 /* GL_Simplex1to4.cpp in Sources */,
+				742C04B21EAAF54E0053B6C3 /* GlutStuff.cpp in Sources */,
+				742C04AF1EAAF54E0053B6C3 /* GLDebugDrawer.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +356,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N464M82TLB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletDynamics",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletCollision",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletSoftBody",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletMultiThreaded",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/MiniCL",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/LinearMath",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -228,6 +373,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DEVELOPMENT_TEAM = N464M82TLB;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletDynamics",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletCollision",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletSoftBody",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/BulletMultiThreaded",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/MiniCL",
+					"$(PROJECT_DIR)/bullet/bullet-build/src/LinearMath",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -251,6 +405,7 @@
 				74CE579E1EA8B2E8003099C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

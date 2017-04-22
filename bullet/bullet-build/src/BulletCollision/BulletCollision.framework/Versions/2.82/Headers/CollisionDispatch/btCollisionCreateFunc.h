@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,33 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef BT_COLLISION_CREATE_FUNC
+#define BT_COLLISION_CREATE_FUNC
 
+#include "LinearMath/btAlignedObjectArray.h"
+class btCollisionAlgorithm;
+class btCollisionObject;
+struct btCollisionObjectWrapper;
+struct btCollisionAlgorithmConstructionInfo;
 
-	
-int main(int argc,char** argv)
+///Used by the btCollisionDispatcher to register and create instances for btCollisionAlgorithm
+struct btCollisionAlgorithmCreateFunc
 {
-
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
+	bool m_swapped;
 	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+	btCollisionAlgorithmCreateFunc()
+		:m_swapped(false)
+	{
+	}
+	virtual ~btCollisionAlgorithmCreateFunc(){};
+
+	virtual	btCollisionAlgorithm* CreateCollisionAlgorithm(btCollisionAlgorithmConstructionInfo& , const btCollisionObjectWrapper* body0Wrap,const btCollisionObjectWrapper* body1Wrap)
+	{
+		
+		(void)body0Wrap;
+		(void)body1Wrap;
+		return 0;
+	}
+};
+#endif //BT_COLLISION_CREATE_FUNC
 

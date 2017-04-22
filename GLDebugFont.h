@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2009 Erwin Coumans  http://bulletphysics.org
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,17 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+
+#ifndef BT_DEBUG_FONT_H
+#define BT_DEBUG_FONT_H
+
+#include "LinearMath/btVector3.h"
 
 
-	
-int main(int argc,char** argv)
-{
+void	GLDebugDrawStringInternal(int x,int y,const char* string,const btVector3& rgb, bool enableBlend, int spacing);
+void	GLDebugDrawStringInternal(int x,int y,const char* string,const btVector3& rgb);
+void	GLDebugDrawString(int x,int y,const char* string);
+void	GLDebugResetFont(int screenWidth,int screenHeight);
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
-	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+#endif //BT_DEBUG_FONT_H
 

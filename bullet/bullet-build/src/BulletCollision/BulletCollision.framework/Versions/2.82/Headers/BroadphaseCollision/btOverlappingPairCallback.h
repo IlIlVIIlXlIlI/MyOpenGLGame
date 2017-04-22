@@ -1,6 +1,7 @@
+
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +14,27 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef OVERLAPPING_PAIR_CALLBACK_H
+#define OVERLAPPING_PAIR_CALLBACK_H
 
+class btDispatcher;
+struct  btBroadphasePair;
 
-	
-int main(int argc,char** argv)
+///The btOverlappingPairCallback class is an additional optional broadphase user callback for adding/removing overlapping pairs, similar interface to btOverlappingPairCache.
+class btOverlappingPairCallback
 {
+public:
+	virtual ~btOverlappingPairCallback()
+	{
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
+	}
 	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+	virtual btBroadphasePair*	addOverlappingPair(btBroadphaseProxy* proxy0,btBroadphaseProxy* proxy1) = 0;
 
+	virtual void*	removeOverlappingPair(btBroadphaseProxy* proxy0,btBroadphaseProxy* proxy1,btDispatcher* dispatcher) = 0;
+
+	virtual void	removeOverlappingPairsContainingProxy(btBroadphaseProxy* proxy0,btDispatcher* dispatcher) = 0;
+
+};
+
+#endif //OVERLAPPING_PAIR_CALLBACK_H

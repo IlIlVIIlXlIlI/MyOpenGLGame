@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2009 Erwin Coumans  http://bulletphysics.org
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,30 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef BT_TRIANGLE_CALLBACK_H
+#define BT_TRIANGLE_CALLBACK_H
+
+#include "LinearMath/btVector3.h"
 
 
-	
-int main(int argc,char** argv)
+///The btTriangleCallback provides a callback for each overlapping triangle when calling processAllTriangles.
+///This callback is called by processAllTriangles for all btConcaveShape derived class, such as  btBvhTriangleMeshShape, btStaticPlaneShape and btHeightfieldTerrainShape.
+class btTriangleCallback
 {
+public:
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
+	virtual ~btTriangleCallback();
+	virtual void processTriangle(btVector3* triangle, int partId, int triangleIndex) = 0;
+};
+
+class btInternalTriangleIndexCallback
+{
+public:
+
+	virtual ~btInternalTriangleIndexCallback();
+	virtual void internalProcessTriangleIndex(btVector3* triangle,int partId,int  triangleIndex) = 0;
+};
 
 
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
-	
-	//default glut doesn't return from mainloop
-	return 0;
-}
 
+#endif //BT_TRIANGLE_CALLBACK_H

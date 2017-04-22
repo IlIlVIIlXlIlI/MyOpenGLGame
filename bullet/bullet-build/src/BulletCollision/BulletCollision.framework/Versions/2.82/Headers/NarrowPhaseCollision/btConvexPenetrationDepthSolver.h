@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,28 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
 
+#ifndef BT_CONVEX_PENETRATION_DEPTH_H
+#define BT_CONVEX_PENETRATION_DEPTH_H
 
-	
-int main(int argc,char** argv)
+class btVector3;
+#include "btSimplexSolverInterface.h"
+class btConvexShape;
+class btTransform;
+
+///ConvexPenetrationDepthSolver provides an interface for penetration depth calculation.
+class btConvexPenetrationDepthSolver
 {
-
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
+public:	
 	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+	virtual ~btConvexPenetrationDepthSolver() {};
+	virtual bool calcPenDepth( btSimplexSolverInterface& simplexSolver,
+		const btConvexShape* convexA,const btConvexShape* convexB,
+					const btTransform& transA,const btTransform& transB,
+				btVector3& v, btVector3& pa, btVector3& pb,
+				class btIDebugDraw* debugDraw) = 0;
+
+
+};
+#endif //BT_CONVEX_PENETRATION_DEPTH_H
 

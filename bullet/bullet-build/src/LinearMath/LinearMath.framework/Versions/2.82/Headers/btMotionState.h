@@ -1,6 +1,6 @@
 /*
 Bullet Continuous Collision Detection and Physics Library
-Copyright (c) 2003-2007 Erwin Coumans  http://continuousphysics.com/Bullet/
+Copyright (c) 2003-2006 Erwin Coumans  http://continuousphysics.com/Bullet/
 
 This software is provided 'as-is', without any express or implied warranty.
 In no event will the authors be held liable for any damages arising from the use of this software.
@@ -13,27 +13,28 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#include "BasicDemo.h"
-#include "GlutStuff.h"
-#include <BulletDynamics/btBulletDynamicsCommon.h>
-#include "LinearMath/btHashMap.h"
+#ifndef BT_MOTIONSTATE_H
+#define BT_MOTIONSTATE_H
 
+#include "btTransform.h"
 
-	
-int main(int argc,char** argv)
+///The btMotionState interface class allows the dynamics world to synchronize and interpolate the updated world transforms with graphics
+///For optimizations, potentially only moving objects get synchronized (using setWorldPosition/setWorldOrientation)
+class	btMotionState
 {
+	public:
+		
+		virtual ~btMotionState()
+		{
+			
+		}
+		
+		virtual void	getWorldTransform(btTransform& worldTrans ) const =0;
 
-	BasicDemo ccdDemo;
-	ccdDemo.initPhysics();
-
-
-#ifdef CHECK_MEMORY_LEAKS
-	ccdDemo.exitPhysics();
-#else
-	return glutmain(argc, argv,1024,600,"Bullet Physics Demo. http://bulletphysics.org",&ccdDemo);
-#endif
+		//Bullet only calls the update of worldtransform for active objects
+		virtual void	setWorldTransform(const btTransform& worldTrans)=0;
+		
 	
-	//default glut doesn't return from mainloop
-	return 0;
-}
+};
 
+#endif //BT_MOTIONSTATE_H
